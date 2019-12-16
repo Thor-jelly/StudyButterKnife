@@ -1,13 +1,12 @@
-package com.wudongdong.studybutterknife;
+package com.wudongdong.studybutterknife.test;
 
 import android.os.Bundle;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.wudongdong.butterknife.ButterKnife;
-import com.wudongdong.butterknife.Unbinder;
 import com.wudongdong.butterknife_annotations.BindView;
+import com.wudongdong.studybutterknife.R;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -16,17 +15,19 @@ public class MainActivity extends AppCompatActivity {
     TextView mButterKnifeTv;
     private Unbinder mUnbinder;*/
 
-    private Unbinder mUnbinder;
+    @BindView(R.id.butter_knife_tv)
+    TextView mButterKnifeTv22;
 
     @BindView(R.id.butter_knife_tv)
-    TextView mButterKnifeTv;
+    TextView mButterKnifeTv1;
+
+    @BindView(R.id.butter_knife_tv)
+    TextView mButterKnifeTv2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        mUnbinder = ButterKnife.bind(this);
 
         /*mUnbinder = ButterKnife.bind(this);
 
@@ -36,6 +37,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        mUnbinder.unbind();
+        /*mUnbinder.unbind();*/
     }
 }

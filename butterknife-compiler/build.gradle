@@ -3,16 +3,16 @@ apply plugin: 'java-library'
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation 'com.google.auto.service:auto-service:1.0-rc3' //这个是谷歌给我们的，用到他的注解
-    implementation 'com.squareup:javapoet:1.10.0' //这个主要用它生成Java文件，用这个工具减少我们的工作量
+    implementation 'com.google.auto.service:auto-service:1.0-rc4' //这个是谷歌给我们的，用到他的注解
+    annotationProcessor "com.google.auto.service:auto-service:1.0-rc4" //这个在gradle5.0以上需要的
+    implementation 'com.squareup:javapoet:1.11.1' //这个主要用它生成Java文件，用这个工具减少我们的工作量
     //添加自己的注解
     implementation project(path: ':butterknife-annotations')
-
 }
 
-tasks.withType(JavaCompile){
-    options.encoding='UTF-8'
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
 }
 
-sourceCompatibility = "8"
-targetCompatibility = "8"
+sourceCompatibility = "1.8"
+targetCompatibility = "1.8"
